@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Dashboard - MWF</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f9fa;
+      }
+      .brand-title {
+        font-family: "Playfair Display", serif;
+        color: #ff6219;
+      }
+      .btn-primary {
+        background-color: #ff6219 !important;
+        border: none !important;
+      }
+      .card {
+        border: none;
+        border-radius: 1rem;
+      }
+      .stat-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand brand-title" href="index.html">MWF Ltd</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inventory.html">Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="orders.html">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary ms-2" href="login.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <section class="container py-5">
+      <h2 class="mb-5 brand-title text-center">Seller Dashboard</h2>
+
+      <!-- Stats Row -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-3">
+          <div class="stat-card text-center">
+            <i class="fas fa-dollar-sign fa-2x text-primary mb-2"></i>
+            <h5>Total Sales</h5>
+            <p class="fw-bold text-success" id="totalSales">$12,500</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-card text-center">
+            <i class="fas fa-shopping-cart fa-2x text-primary mb-2"></i>
+            <h5>Total Orders</h5>
+            <p class="fw-bold text-primary" id="totalOrders">320</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-card text-center">
+            <i class="fas fa-boxes fa-2x text-primary mb-2"></i>
+            <h5>Stock Items</h5>
+            <p class="fw-bold text-warning" id="stockItems">120</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-card text-center">
+            <i class="fas fa-truck fa-2x text-primary mb-2"></i>
+            <h5>Pending Deliveries</h5>
+            <p class="fw-bold text-danger" id="pendingDeliveries">8</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card p-3 shadow-lg">
+            <h5 class="card-title">Sales Trend</h5>
+            <canvas id="salesChart"></canvas>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-3 shadow-lg">
+            <h5 class="card-title">Top Selling Products</h5>
+            <canvas id="topProductsChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Dummy stats (replace with backend fetch)
+      document.getElementById("totalSales").textContent = "$12,500";
+      document.getElementById("totalOrders").textContent = "320";
+      document.getElementById("stockItems").textContent = "120";
+      document.getElementById("pendingDeliveries").textContent = "8";
+
+      // Sales Trend Chart
+      new Chart(document.getElementById("salesChart"), {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+          datasets: [
+            {
+              label: "Sales ($)",
+              data: [2000, 2500, 4000, 3500, 5000, 4500],
+              borderColor: "#ff6219",
+              fill: true,
+              backgroundColor: "rgba(255,98,25,0.2)",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+        },
+      });
+
+      // Top Products Chart
+      new Chart(document.getElementById("topProductsChart"), {
+        type: "bar",
+        data: {
+          labels: ["Chairs", "Tables", "Beds", "Cupboards", "Shelves"],
+          datasets: [
+            {
+              label: "Units Sold",
+              data: [120, 90, 75, 60, 50],
+              backgroundColor: "#ff6219",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+        },
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

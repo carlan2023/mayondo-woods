@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MWF Products</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand brand-title" href="index.html">MWF Ltd</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary ms-2" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Filter & Sort Bar -->
+    <div class="container mb-4">
+      <div class="d-flex flex-wrap justify-content-between align-items-center">
+        <!-- Filter by Category -->
+        <div class="mb-2">
+          <select id="filterCategory" class="form-select">
+            <option value="all">All Categories</option>
+            <option value="chair">Chairs</option>
+            <option value="table">Tables</option>
+            <option value="cabinet">Cabinets</option>
+            <option value="shelf">Shelves</option>
+          </select>
+        </div>
+
+        <!-- Sort -->
+        <div class="mb-2">
+          <select id="sortProducts" class="form-select">
+            <option value="default">Sort by</option>
+            <option value="priceLowHigh">Price: Low → High</option>
+            <option value="priceHighLow">Price: High → Low</option>
+            <option value="nameAZ">Name: A → Z</option>
+            <option value="nameZA">Name: Z → A</option>
+          </select>
+        </div>
+
+        <!-- Cart Icon -->
+        <div class="mb-2">
+          <button
+            class="btn btn-outline-primary position-relative"
+            id="cartBtn"
+          >
+            <i class="fas fa-shopping-cart"></i> Cart
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              id="cartCount"
+            >
+              0
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="container py-5">
+      <h2 class="text-center mb-5 brand-title">Our Products</h2>
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-3 product-card"
+          data-category="chair"
+          data-price="120"
+          data-name="Wooden Chair"
+        >
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Chair" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <button class="btn btn-primary add-to-cart">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-md-3">
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/hmmm.jpeg" class="card-img-top" alt="Product" />
+            <div class="card-body">
+              <h5 class="card-title">Wooden Chair</h5>
+              <p class="card-text">Crafted from premium oak.</p>
+              <p class="fw-bold text-primary">$120</p>
+              <a href="#" class="btn btn-primary">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-md-3">
+          <div class="card shadow-lg border-0 h-100">
+            <img src="/images/green.jpeg" class="card-img-top" alt="Product" />
+            <div class="card-body">
+              <h5 class="card-title">Dining Table</h5>
+              <p class="card-text">Perfect centerpiece for family meals.</p>
+              <p class="fw-bold text-primary">$450</p>
+              <a href="#" class="btn btn-primary">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="col-md-3">
+          <div class="card shadow-lg border-0 h-100">
+            <img
+              src="/images/cupboard.jpeg"
+              class="card-img-top"
+              alt="Product"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Classic Cupboard</h5>
+              <p class="card-text">Strong and spacious wooden cupboard.</p>
+              <p class="fw-bold text-primary">$300</p>
+              <a href="#" class="btn btn-primary">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (matching theme) -->
+    <footer class="bg-dark text-white text-center text-lg-start">
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-secondary"
+      >
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <div>
+          <a href="#" class="me-4 text-white"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" class="me-4 text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="me-4 text-white"><i class="fab fa-google"></i></a>
+          <a href="#" class="me-4 text-white"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="me-4 text-white"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="#" class="me-4 text-white"><i class="fab fa-github"></i></a>
+        </div>
+      </section>
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2025 Copyright:
+        <a class="text-white fw-bold" href="https://allanmitanda.com/"
+          >allanmitanda.com</a
+        >
+      </div>
+    </footer>
+    <script>
+      // --- Shopping Cart ---
+      let cart = [];
+      const cartCount = document.getElementById("cartCount");
+
+      document.querySelectorAll(".add-to-cart").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const card = this.closest(".product-card");
+          const name = card.dataset.name;
+          const price = parseFloat(card.dataset.price);
+
+          // Add product to cart array
+          cart.push({ name, price });
+          cartCount.textContent = cart.length;
+
+          alert(`${name} added to cart!`);
+        });
+      });
+
+      // --- Filtering by category ---
+      document
+        .getElementById("filterCategory")
+        .addEventListener("change", function () {
+          const value = this.value;
+          document.querySelectorAll(".product-card").forEach((card) => {
+            if (value === "all" || card.dataset.category === value) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+
+      // --- Sorting products ---
+      document
+        .getElementById("sortProducts")
+        .addEventListener("change", function () {
+          const value = this.value;
+          let products = Array.from(document.querySelectorAll(".product-card"));
+          const parent = products[0].parentNode;
+
+          products.sort((a, b) => {
+            let priceA = parseFloat(a.dataset.price);
+            let priceB = parseFloat(b.dataset.price);
+            let nameA = a.dataset.name.toLowerCase();
+            let nameB = b.dataset.name.toLowerCase();
+
+            if (value === "priceLowHigh") return priceA - priceB;
+            if (value === "priceHighLow") return priceB - priceA;
+            if (value === "nameAZ") return nameA.localeCompare(nameB);
+            if (value === "nameZA") return nameB.localeCompare(nameA);
+            return 0;
+          });
+
+          // Re-append sorted
+          products.forEach((p) => parent.appendChild(p));
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/index.js"></script>
+  </body>
+</html>
